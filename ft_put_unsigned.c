@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 12:06:43 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/16 14:45:33 by juaherre         ###   ########.fr       */
+/*   Created: 2023/05/16 13:50:42 by juaherre          #+#    #+#             */
+/*   Updated: 2023/05/16 14:05:28 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stddef.h> //para size_t
-# include <stdarg.h> //para las funciones de arg variables (va_...)
+int	ft_put_unsigned(unsigned int n)
+{
+	char	mod;
 
-int	ft_putchar(int c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_put_unsigned(unsigned int n);
-int	ft_put_hex_low(int n);
-int	ft_put_hex_upp(int n);
-int	ft_put_perc(int c);
-
-#endif
+	if (n >= 10)
+	{
+		ft_putunsigned(n / 10);
+	}
+	mod = (n % 10) + '0';
+	ft_putchar(mod);
+}

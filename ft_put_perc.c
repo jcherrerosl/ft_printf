@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_perc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 12:06:43 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/16 14:45:33 by juaherre         ###   ########.fr       */
+/*   Created: 2023/05/16 14:43:50 by juaherre          #+#    #+#             */
+/*   Updated: 2023/05/16 14:45:16 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stddef.h> //para size_t
-# include <stdarg.h> //para las funciones de arg variables (va_...)
-
-int	ft_putchar(int c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_put_unsigned(unsigned int n);
-int	ft_put_hex_low(int n);
-int	ft_put_hex_upp(int n);
-int	ft_put_perc(int c);
-
-#endif
+int	ft_put_perc(int c)
+{
+	if (c == '%')
+		write(1, &c, 1);
+	return (0);
+}

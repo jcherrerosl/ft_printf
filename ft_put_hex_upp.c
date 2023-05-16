@@ -1,19 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_put_hex_upp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 12:00:01 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/16 14:53:59 by juaherre         ###   ########.fr       */
+/*   Created: 2023/05/16 14:27:01 by juaherre          #+#    #+#             */
+/*   Updated: 2023/05/16 14:28:16 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(int c)
+static int	ft_numlen(unsigned int n)
 {
-	write(1, &c, 1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (n >= 16)
+	{
+		n = n / 16;
+		i++;
+	}
+	return (i + 1);
+}
+
+int	ft_put_hex_upp(int n)
+{
+	int	len;
+
+	len = ft_numlen(n);
+	if (n >= 16)
+	{
+		ft_put_hex_upp(n / 16);
+		ft_put_hex_upp(n % 16);
+	}
+	else
+	{
+		if (n < 10)
+		{
+			n = n + '0';
+			write (1, &n, 1);
+		}
+		else if (n >= 10 && n < 16)
+		{
+			n = n - 10 + 'A';
+			write (1, &n, 1);
+		}
+	}	
+	return (len);
 }
