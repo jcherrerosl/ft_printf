@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:27:01 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/16 14:28:16 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:32:02 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static int	ft_numlen(unsigned int n)
 		n = n / 16;
 		i++;
 	}
-	return (i + 1);
+	i++;
+	return (i);
 }
 
 int	ft_put_hex_upp(int n)

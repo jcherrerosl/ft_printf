@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:00:01 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/16 14:53:59 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:16:10 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_putchar(int c)
 {
 	write(1, &c, 1);
-	return (0);
+	return (1);
 }
