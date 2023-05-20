@@ -6,13 +6,13 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:57:51 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/19 14:31:05 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:17:23 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_numlen(unsigned int n)
+static int	ft_hexlen(unsigned int n)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int	ft_put_hex_low(int n)
 {
 	int	len;
 
-	len = ft_numlen(n);
+	len = ft_hexlen(n);
 	if (n >= 16)
 	{
 		ft_put_hex_low(n / 16);

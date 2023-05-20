@@ -6,26 +6,11 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:12:27 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/19 14:24:57 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:13:52 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	len_num(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n < 0)
-		i++;
-	while (n / 10 != 0)
-	{
-		n /= 10;
-		i++;
-	}
-	i++;
-}
 
 int	ft_putnbr(int n)
 {

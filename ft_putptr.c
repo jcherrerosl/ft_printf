@@ -1,53 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_hex_upp.c                                   :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 14:27:01 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/20 12:17:07 by juaherre         ###   ########.fr       */
+/*   Created: 2023/05/20 12:18:48 by juaherre          #+#    #+#             */
+/*   Updated: 2023/05/20 12:22:40 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_hexlen(unsigned int n)
+int	ft_putptr(void *ptr)
 {
-	int	i;
+	int	n;
 
-	i = 0;
-	while (n >= 16)
-	{
-		n = n / 16;
-		i++;
-	}
-	i++;
-	return (i);
-}
-
-int	ft_put_hex_upp(int n)
-{
-	int	len;
-
-	len = ft_hexlen(n);
-	if (n >= 16)
-	{
-		ft_put_hex_upp(n / 16);
-		ft_put_hex_upp(n % 16);
-	}
-	else
-	{
-		if (n < 10)
-		{
-			n = n + '0';
-			write (1, &n, 1);
-		}
-		else if (n >= 10 && n < 16)
-		{
-			n = n - 10 + 'A';
-			write (1, &n, 1);
-		}
-	}	
-	return (len);
+	write(1, "0x", 2);
+	n = (int)ptr;
+	ft_put_hex_low(n);
+	return (len_num(n) + 2);
 }
