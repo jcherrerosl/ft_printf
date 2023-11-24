@@ -14,10 +14,38 @@
 
 int	ft_putptr(void *ptr)
 {
-	int	n;
+	size_t	n;
+	int	len;
 
+	n = (size_t)ptr;
 	write(1, "0x", 2);
-	n = (int)&ptr;
-	ft_putnbr(n);
-	return (len_num(n) + 2);
+	len = 2; //el "0x"
+	if (ptr == NULL)
+	{
+		write(1, "0", 1);
+		len = len + 1;
+	}
+	else
+	{
+		ft_put_hex_low(n);
+		len = len + len_hex(n);
+	}
+	return (len);
+}
+
+static int len_hex(size_t num) //porque no puedo usar strlen al ser número, aunque tenga letras
+{
+    int	length;
+	
+    length = 0;
+    if (num == 0)
+        return (1); // El número 0 tiene un solo dígito en hexadecimal
+
+    while (num != 0)
+    {
+        num /= 16; // Dividir por la base del sistema hexadecimal
+        length++;
+    }
+
+    return length;
 }
