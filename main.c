@@ -1,43 +1,38 @@
-
 #include "ft_printf.h"
 #include <stdio.h>
 
+int main() {
+    // Prueba de impresión de caracteres
+    ft_printf("ft_printf - Carácter: %c\n", 'A');
+    printf("printf - Carácter: %c\n\n", 'A');
 
-int main()
-{
-    //int p;
-    char c = 'c';
-    char *p = &c;
-    char *s = "patata";
-    int u = -12;
-    
-    //int hex = -4779;
+    // Prueba de impresión de cadenas
+    ft_printf("ft_printf - Cadena: %s\n", "Hola Mundo");
+    printf("printf - Cadena: %s\n\n", "Hola Mundo");
 
-    //ft_printf("Hola manin %    s patata", array);
-    //ft_printf("%c", c);
-    //ft_printf("\n");
-    //ft_printf("%s", s);
-    //ft_printf("\n");
-    //ft_printf("%p", &p);
-    //ft_printf("\n");
-    //ft_printf("%d", 8);
-    //ft_printf("\n");
-    //ft_printf("\n");
-    //ft_printf("%i", d),
-    //ft_printf("%u", d);
-    //ft_printf("\n");
-    //ft_printf("%x", hex);
-    //ft_printf("\n");
-    //ft_printf("%X", hex);
-    //ft_printf("\n");
-    //ft_printf("%%");
-    //ft_printf("    hola       que     tal %    i\n", 2);
-    ft_printf("%p",p);
-    //printf("%p",p);
-    ft_putptr(p);
-    ft_putchar('\n');
-    ft_put_hex_low(c);
+    // Prueba de impresión de números enteros
+    ft_printf("ft_printf - Número entero: %d\n", 123);
+    printf("printf - Número entero: %d\n\n", 123);
+
+    // Prueba de impresión de números enteros sin signo
+    ft_printf("ft_printf - Número sin signo: %u\n", 123);
+    printf("printf - Número sin signo: %u\n\n", 123);
+
+    // Prueba de impresión de números en formato hexadecimal (minúsculas y mayúsculas)
+    ft_printf("ft_printf - Hexadecimal (minúsculas): %x\n", 0x1a2b3c);
+    printf("printf - Hexadecimal (minúsculas): %x\n\n", 0x1a2b3c);
+
+    ft_printf("ft_printf - Hexadecimal (mayúsculas): %X\n", 0x1a2b3c);
+    printf("printf - Hexadecimal (mayúsculas): %X\n\n", 0x1a2b3c);
+
+    // Prueba de impresión de punteros
+    int num = 10;
+    ft_printf("ft_printf - Puntero: %p\n", &num);
+    printf("printf - Puntero: %p\n\n", &num);
+
+    // Prueba de impresión de porcentaje
+    ft_printf("ft_printf - Porcentaje: %%\n");
+    printf("printf - Porcentaje: %%\n\n");
 
     return 0;
-
 }

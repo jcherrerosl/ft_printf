@@ -6,16 +6,33 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 12:18:48 by juaherre          #+#    #+#             */
-/*   Updated: 2023/11/22 15:34:09 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:05:27 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int len_hex(int num) //porque no puedo usar strlen al ser número, aunque tenga letras
+{
+    int	length;
+	
+    length = 0;
+    if (num == 0)
+        return (1); // El número 0 tiene un solo dígito en hexadecimal
+
+    while (num != 0)
+    {
+        num /= 16; // Dividir por la base del sistema hexadecimal
+        length++;
+    }
+
+    return length;
+}
+
 int	ft_putptr(void *ptr)
 {
 	size_t	n;
-	int	len;
+	int		len;
 
 	n = (size_t)ptr;
 	write(1, "0x", 2);
@@ -31,21 +48,4 @@ int	ft_putptr(void *ptr)
 		len = len + len_hex(n);
 	}
 	return (len);
-}
-
-static int len_hex(size_t num) //porque no puedo usar strlen al ser número, aunque tenga letras
-{
-    int	length;
-	
-    length = 0;
-    if (num == 0)
-        return (1); // El número 0 tiene un solo dígito en hexadecimal
-
-    while (num != 0)
-    {
-        num /= 16; // Dividir por la base del sistema hexadecimal
-        length++;
-    }
-
-    return length;
 }
