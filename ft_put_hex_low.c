@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:57:51 by juaherre          #+#    #+#             */
-/*   Updated: 2023/06/01 12:50:10 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:27:44 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_hexlen(unsigned int n)
 	return (i);
 }
 
-int	ft_put_hex_low(int n)
+int	ft_put_hex_low(size_t n)
 {
 	int	len;
 
@@ -48,6 +48,6 @@ int	ft_put_hex_low(int n)
 			n = n - 10 + 'a';
 			write (1, &n, 1);
 		}
-	}	
+	}
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:19:17 by juaherre          #+#    #+#             */
-/*   Updated: 2023/11/22 13:34:56 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:41:11 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,38 +27,36 @@ static int	var_type(char c, va_list thing)
 	if (c == 'X')
 		return (ft_put_hex_upp(va_arg(thing, unsigned int)));
 	if (c == '%')
-		return (ft_put_perc(va_arg(thing, int)));
+		return (ft_put_perc('%'));
 	if (c == 'p')
 		return (ft_putptr(va_arg(thing, char *)));
 	return (0);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(char const *str, ...)
 {
 	int		i;
 	int		len;
-	va_list	arg;
+	va_list	args;
 
-	va_start(arg, str);
-	len = 0;
 	i = 0;
+	len = 0;
+	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%' && str[i + 1])
+		if (str[i] == '%')
 		{
-			len--;
 			i++;
 			while (str[i] == 32)
-			{
 				i++;
-				len--;
-			}
-			len += var_type(i, arg);
+			len += var_type(str[i], args);
+			i++;
 		}
 		else
-			write(1, &str[i], 1);
-		i++;
+		{
+			len += ft_putchar(str[i]);
+			i++;
+		}
 	}
-	va_end(arg);
-	return (len + i);
+	return (len);
 }

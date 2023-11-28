@@ -6,21 +6,23 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:50:42 by juaherre          #+#    #+#             */
-/*   Updated: 2023/11/22 12:34:55 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:57:20 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_unsigned(unsigned int n)
+int	ft_put_unsigned(unsigned int nb)
 {
-	int	mod;
+	int len;
 
-	if (n >= 10)
+	len = 0;
+	if(nb > 9)
 	{
-		ft_put_unsigned(n / 10);
+		len += ft_put_unsigned(nb / 10);
+		len += ft_put_unsigned(nb % 10);
 	}
-	mod = (n % 10) + '0';
-	ft_putchar(mod);
-	return (len_num(n));
+	else
+		len += ft_putchar(nb + 48);
+	return (len);
 }

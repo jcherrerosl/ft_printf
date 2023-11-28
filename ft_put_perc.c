@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:43:50 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/19 14:25:22 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:39:24 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_put_perc(int c)
 {
-	if (c == '%')
-		write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }

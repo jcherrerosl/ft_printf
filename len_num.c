@@ -6,9 +6,11 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 12:14:12 by juaherre          #+#    #+#             */
-/*   Updated: 2023/11/22 12:43:49 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:56:28 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	len_num(int n)
 {
@@ -16,11 +18,14 @@ int	len_num(int n)
 
 	i = 0;
 	if (n < 0)
-		i++;
-	while (n / 10 != 0)
 	{
-		n /= 10;
 		i++;
+	}
+	while (n > 9)
+	{
+		i++;
+		n /= 10;
+		ft_putstr("*");
 	}
 	i++;
 	return (i);

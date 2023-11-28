@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 int main() {
+
+    int n1;
+    int n2;
+
+    n1 = -1544510;
+    n2 = n1;
     // Prueba de impresión de caracteres
     ft_printf("ft_printf - Carácter: %c\n", 'A');
     printf("printf - Carácter: %c\n\n", 'A');
@@ -11,8 +17,8 @@ int main() {
     printf("printf - Cadena: %s\n\n", "Hola Mundo");
 
     // Prueba de impresión de números enteros
-    ft_printf("ft_printf - Número entero: %d\n", 123);
-    printf("printf - Número entero: %d\n\n", 123);
+    n1 = ft_printf("ft_printf - Número entero: %d\n", n1);
+    n2 = printf("printf - Número entero: %d\n\n", n2);
 
     // Prueba de impresión de números enteros sin signo
     ft_printf("ft_printf - Número sin signo: %u\n", 123);
@@ -34,5 +40,4 @@ int main() {
     ft_printf("ft_printf - Porcentaje: %%\n");
     printf("printf - Porcentaje: %%\n\n");
 
-    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:12:27 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/20 12:13:52 by juaherre         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:53:56 by juaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	ft_putnbr(int n)
 {
-	char	mod;
+	int		len;
 
+	len = 0;
 	if (n == -2147483648)
-	{
 		return (ft_putstr("-2147483648"));
-	}
-	if (n < 0)
+	if (n > 9)
 	{
-		ft_putchar('-');
-		n = -n;
+		len += ft_putnbr(n / 10);
+		len += ft_putnbr(n % 10);
 	}
-	if (n >= 10)
+	else if (n < 0)
 	{
-		ft_putnbr(n / 10);
+		len += ft_putchar('-');
+		len += ft_putnbr(-n);
 	}
-	mod = (n % 10) + '0';
-	ft_putchar(mod);
-	return (len_num(n));
+	else
+		len += ft_putchar(n + '0');
+	return (len);
 }
