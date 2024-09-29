@@ -5,10 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/22 13:36:59 by juaherre          #+#    #+#              #
-#    Updated: 2024/09/29 20:54:24 by juanherr         ###   ########.fr        #
+#    Created: 2024/09/29 23:13:11 by juanherr          #+#    #+#              #
+#    Updated: 2024/09/29 23:13:15 by juanherr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 SRCS = ft_printf.c ft_putchar.c ft_put_hex_low.c ft_put_hex_upp.c ft_putnbr.c \
 	   ft_putptr.c ft_putstr.c ft_put_unsigned.c ft_put_perc.c len_num.c

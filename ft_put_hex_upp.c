@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_hex_upp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 14:27:01 by juaherre          #+#    #+#             */
-/*   Updated: 2023/11/27 00:20:58 by juaherre         ###   ########.fr       */
+/*   Created: 2024/09/29 23:14:16 by juanherr          #+#    #+#             */
+/*   Updated: 2024/09/29 23:14:18 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

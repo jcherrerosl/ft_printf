@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   len_num.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 12:14:12 by juaherre          #+#    #+#             */
-/*   Updated: 2023/11/22 12:43:49 by juaherre         ###   ########.fr       */
+/*   Created: 2024/09/29 23:13:20 by juanherr          #+#    #+#             */
+/*   Updated: 2024/09/29 23:13:25 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
