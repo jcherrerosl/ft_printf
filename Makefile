@@ -15,8 +15,8 @@ SRCS = ft_printf.c ft_putchar.c ft_put_hex_low.c ft_put_hex_upp.c ft_putnbr.c \
 
 NAME = libftprintf.a
 OBJS = $(SRCS:.c=.o)
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -O0
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 all: $(NAME)
