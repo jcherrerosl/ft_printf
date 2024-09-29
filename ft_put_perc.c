@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_perc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:43:50 by juaherre          #+#    #+#             */
-/*   Updated: 2023/05/19 14:25:22 by juaherre         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:25:49 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_perc(int c)
+int	ft_put_perc(void)
 {
-	if (c == '%')
-		write(1, &c, 1);
-	return (1);
+	return (ft_putchar('%'));
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juaherre <juaherre@student.42madrid.com    +#+  +:+       +#+         #
+#    By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 13:36:59 by juaherre          #+#    #+#              #
-#    Updated: 2023/11/27 00:31:03 by juaherre         ###   ########.fr        #
+#    Updated: 2024/09/29 20:54:24 by juanherr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

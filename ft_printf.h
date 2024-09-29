@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:06:43 by juaherre          #+#    #+#             */
-/*   Updated: 2024/09/29 20:25:11 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:47:21 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_putptr(void *ptr);
 int	ft_put_unsigned(unsigned int n);
 int	ft_put_hex_low(size_t n);
 int	ft_put_hex_upp(size_t n);
-int	ft_put_perc(int c);
+int	ft_put_perc(void);
 int	len_num(int n);
+int	ft_unknown(char c);
+
 #endif

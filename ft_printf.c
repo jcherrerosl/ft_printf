@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:19:17 by juaherre          #+#    #+#             */
-/*   Updated: 2024/09/29 20:37:24 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:50:34 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	var_type(char c, va_list args)
 	else if (c == 'X')
 		return (ft_put_hex_upp(va_arg(args, unsigned int)));
 	else if (c == '%')
-		return (ft_putchar('%'));
+		return (ft_put_perc());
 	else if (c == 'p')
 		return (ft_putptr(va_arg(args, void *)));
 	else
