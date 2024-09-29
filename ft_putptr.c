@@ -12,21 +12,6 @@
 
 #include "ft_printf.h"
 
-static int	len_hex(size_t num)
-{
-	int	length;
-
-	length = 0;
-	if (num == 0)
-		return (1);
-	while (num != 0)
-	{
-		num /= 16;
-		length++;
-	}
-	return (length);
-}
-
 int	ft_putptr(void *ptr)
 {
 	size_t	n;
