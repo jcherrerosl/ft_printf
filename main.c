@@ -3,63 +3,175 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 17:22:40 by juanherr          #+#    #+#             */
-/*   Updated: 2024/09/29 21:49:12 by juanherr         ###   ########.fr       */
+/*   Created: 2021/11/19 20:36:59 by dlerma-c          #+#    #+#             */
+/*   Updated: 2024/09/30 16:03:08 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
-#include <limits.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	int		num = 42;
-	char	ch = 'A';
-	char	*str = "Hello, World!";
-	char	*null_str = NULL;
-	unsigned int u_num = 123456789;
-	void	*ptr = &num;
-	void	*null_ptr = NULL;
+	int	result;
 
-	// Comparando printf y ft_printf
+	(void)argc;
 
-	// 1. Caracter no reconocido: %t
-	printf("\n--- Test con formato no reconocido (%%t) ---\n");
-	printf("printf: %t\n");
-	ft_printf("ft_printf: %t\n");
-
-	// 2. String NULL
-	printf("\n--- Test con String NULL ---\n");
-	printf("printf: %s\n", null_str);
-	ft_printf("ft_printf: %s\n", null_str);
-
-	// 3. Signed int extremos
-	printf("\n--- Test con Signed int extremos (INT_MAX, INT_MIN) ---\n");
-	printf("printf: %d %d\n", INT_MAX, INT_MIN);
-	ft_printf("ft_printf: %d %d\n", INT_MAX, INT_MIN);
-
-	// 4. Unsigned int extremo
-	printf("\n--- Test con Unsigned int extremo (UINT_MAX) ---\n");
-	printf("printf: %u\n", UINT_MAX);
-	ft_printf("ft_printf: %u\n", UINT_MAX);
-
-	// 5. Hexadecimal (lowercase) con valor 0
-	printf("\n--- Test con Hexadecimal (lowercase) valor 0 ---\n");
-	printf("printf: %x\n", 0);
-	ft_printf("ft_printf: %x\n", 0);
-
-	// 6. Pointer (NULL)
-	printf("\n--- Test con Pointer NULL ---\n");
-	printf("printf: %p\n", null_ptr);
-	ft_printf("ft_printf: %p\n", null_ptr);
-
-	// 7. Combinación de varios tipos
-	printf("\n--- Test con Combinación de tipos ---\n");
-	printf("printf: %c %s %d %u %x %p %%\n", ch, str, num, u_num, u_num, ptr);
-	ft_printf("ft_printf: %c %s %d %u %x %p %%\n", ch, str, num, u_num, u_num, ptr);
-
+	if (argc == 2)
+	{
+		if (strcmp(argv[1], "string") == 0)
+		{
+			printf("\n\nORIGINAL: \n");
+			result = printf("SOLO UN STRING.");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("SOLO UN STRING.");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("ORIGINAL: \n");
+			result = printf("CHAR RAROS: ¢@#|∞≠çñäêó$&¿?¡!");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("CHAR RAROS: ¢@#|∞≠çñäêó$&¿?¡!");
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%c") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%c %c %c %c %c %c", 'a', 's', '2', 'y', '=', '?');
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%c %c %c %c %c %c", 'a', 's', '2', 'y', '=', '?');
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%d") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%d %d %d %d %d %d %d", 1, 98 , -45, 1245648, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%d %d %d %d %d %d %d", 1, 98 , -45, 1245648, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%i") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%i %i %i %i %i %i %i", 1, 98 , -45, 1245648, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%i %i %i %i %i %i %i", 1, 98 , -45, 1245648, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%u") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%u %u %u %u %u %u %u", -1, 98 , -4545, -1000000000, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%u %u %u %u %u %u %u", -1, 98 , -4545, -1000000000, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%x") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%x %x %x %x %x %x %x", 0, -1 , 1, -1000000000, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%x %x %x %x %x %x %x", 0, -1 , 1, -1000000000, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+			/////////////////////////////////////
+			printf("ORIGINAL: \n");
+			result = printf( " %x ", 0);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf(" %x ", 0);
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%X") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%X %X %X %X %X %X %X\n", 16, 98 , -4545, -1000000000, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%X %X %X %X %X %X %X\n", 16, 98 , -4545, -1000000000, -2147483647, 2147483647, 0);
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%s") == 0)
+		{
+			printf("ORIGINAL: \n");
+			result = printf("%s", "Texto simple");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%s", "Texto simple");
+			printf("\nNUM: %d\n\n", result);
+			///////////////////////////////////
+			printf("\nORIGINAL: \n");
+			result = printf("%s %s", "Texto simple1", "Texto simple2");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%s %s", "Texto simple1", "Texto simple2");
+			printf("\nNUM: %d\n\n", result);
+			///////////////////////////////////
+			printf("\nORIGINAL: \n");
+			result = printf("%s %s", "Caracteres raros", "¢@#|∞≠çñäêó$&¿?¡!");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%s %s", "Caracteres raros", "¢@#|∞≠çñäêó$&¿?¡!");
+			printf("\nNUM: %d\n\n", result);
+			///////////////////////////////////
+			printf("\nORIGINAL: \n");
+			result = printf("NULL %s NULL", NULL);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("NULL %s NULL", NULL);
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%%") == 0)
+		{
+			printf("\nORIGINAL: \n");
+			result = printf("%% %% %% %% %%");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%% %% %% %% %%");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("\nORIGINAL: \n");
+			result = printf("%%%%%%%%%%%%%%%%%%%%");
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%%%%%%%%%%%%%%%%%%%%");
+			printf("\nNUM: %d\n\n", result);
+		}
+		else if (strcmp(argv[1], "%p") == 0)
+		{
+			printf("\nORIGINAL: \n");
+			result = printf("%p %p %p %p %p %p %p", (void *)-1, (void *)0, (void *)-98, (void *)548987, (void *)2147483647, (void *)-54465, (void *)1);
+			printf("\nNUM: %d\n\n", result);
+			////////////////////////////////////
+			printf("FUNCION: \n");
+			result = ft_printf("%p %p %p %p %p %p %p", (void *)-1, (void *)0, (void *)-98, (void *)548987, (void *)2147483647, (void *)-54465, (void *)1);
+			printf("\nNUM: %d\n\n", result);
+		}
+	}
+	system("leaks -q a.out\n");
 	return (0);
 }
